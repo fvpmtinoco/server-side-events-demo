@@ -1,0 +1,11 @@
+services:
+  orders.realtime.api:
+    image: ${DOCKER_REGISTRY-}ordersrealtimeapi
+    build:
+      context: .
+      dockerfile: Orders.Realtime.Api/Dockerfile
+    ports:
+      - "7176:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
